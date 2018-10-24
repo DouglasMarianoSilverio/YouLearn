@@ -1,11 +1,12 @@
 ﻿using System;
+using YouLearn.Domain.Entities.Base;
 using YouLearn.Domain.Enums;
 
 namespace YouLearn.Domain.Entities
 {
-    public class Video
+    public class Video : EntityBase
     {
-        public Guid Id { get; set; }
+        
         public Canal Canal { get; set; }
         public Playlist Playlist { get; set; }
         public string Nome { get; set; }
