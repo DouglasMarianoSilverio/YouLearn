@@ -1,4 +1,5 @@
 ﻿using System;
+using YouLearn.Domain.Enums;
 
 namespace YouLearn.Domain.Entities
 {
@@ -13,6 +14,6 @@ namespace YouLearn.Domain.Entities
         public int OrdemNaPlaylist { get; set; }
         public string IdVideoYoutube { get; set; }
         public Usuario UsuarioSugeriu { get; set; }
-        public string Status { get; set; }
+        public EnumStatus Status { get; set; }
     }
 }
