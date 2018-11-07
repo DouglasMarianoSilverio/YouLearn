@@ -9,6 +9,7 @@ namespace YouLearn.Domain.Interfaces.Repositories
         Usuario Obter(string email, string senha);
         void Salvar(Usuario usuario);
         bool Existe(string email);
+
         
     }
 }

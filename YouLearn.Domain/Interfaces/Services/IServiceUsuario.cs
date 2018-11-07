@@ -5,6 +5,6 @@ namespace YouLearn.Domain.Interfaces.Services
     public interface IServiceUsuario
     {
         AdicionarUsuarioResponse AdicionarUsuario(AdicionarUsuarioRequest request);
-        AutenticarUsuarioResponse AutenticarUsuario(AutenticarUsuarioRequest);
+        AutenticarUsuarioResponse AutenticarUsuario(AutenticarUsuarioRequest request);
     }
 }
