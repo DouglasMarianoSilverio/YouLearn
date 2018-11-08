@@ -6,7 +6,6 @@ namespace YouLearn.Domain.Entities
 {
     public class Video : EntityBase
     {
-        
         public Canal Canal { get; set; }
         public Playlist Playlist { get; set; }
         public string Nome { get; set; }

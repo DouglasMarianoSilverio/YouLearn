@@ -1,11 +1,12 @@
-﻿using System;
+﻿using prmToolkit.NotificationPattern;
+using System;
 using YouLearn.Domain.Arguments.Usuario;
 using YouLearn.Domain.Entities;
 using YouLearn.Domain.Interfaces.Services;
 
 namespace YouLearn.Domain.Services
 {
-    public class ServiceUsuario : IServiceUsuario, Notifiable
+    public class ServiceUsuario : Notifiable, IServiceUsuario 
     {
         public AdicionarUsuarioResponse AdicionarUsuario(AdicionarUsuarioRequest request)
         {
