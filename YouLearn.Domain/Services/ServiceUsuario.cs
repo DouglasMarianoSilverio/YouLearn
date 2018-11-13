@@ -1,50 +1,48 @@
-﻿using System;
+﻿using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
+using System;
 using YouLearn.Domain.Arguments.Usuario;
 using YouLearn.Domain.Entities;
 using YouLearn.Domain.Interfaces.Services;
+using YouLearn.Domain.Resources;
+using YouLearn.Domain.ValueObjects;
 
 namespace YouLearn.Domain.Services
 {
-    public class ServiceUsuario : IServiceUsuario, Notifiable
+    public class ServiceUsuario : Notifiable, IServiceUsuario
     {
         public AdicionarUsuarioResponse AdicionarUsuario(AdicionarUsuarioRequest request)
         {
-            if(request ==null)
+            if (request == null)
             {
-                throw new Exception("Objeto AdicionarUsuarioRequest Obrigatorio");
-            }
-            Usuario usuario = new Usuario();
-            usuario.Nome.PrimeiroNome = "Douglas";
-            usuario.Nome.UltimoNome = "Silverio";
-            usuario.Email.Endereco = "douglas07@gmail.com";
-            usuario.Senha = "123456";
 
-            if (usuario.Nome.PrimeiroNome.Length < 3 || usuario.Nome.PrimeiroNome.Length > 50)
-            {
-                throw new Exception("Primeiro nome é obrigatorio ter entre 3 e 50 caracteres.");
+                AddNotification("AdicionarUsuarioRequest", MSG.OBJETO_X0_E_OBRIGATORIO.ToFormat("AdicionarUsuarioRequest"));
+                return null;
             }
 
-            if (usuario.Nome.UltimoNome.Length < 3 || usuario.Nome.UltimoNome.Length > 50)
-            {
-                throw new Exception("Ultimo nome é obrigatorio ter entre 3 e 50 caracteres.");
-            }
+            Nome nome = new Nome( request.PrimeiroNome,request.UltimoNome);
+        
 
-            if (usuario.Email.Endereco.IndexOf("@",0) < 1)
-            {
-                throw new Exception("Email invalido.");
-            }
+            Email email = new Email(request.Email);
 
-            if (usuario.Senha.Length < 3)
-            {
-                throw new Exception("Senha tem que ter ao menos 3 caracteres.");
-            }
+
+
+
+            Usuario usuario = new Usuario(
+           nome, email, request.Senha);
+            
+
+            AddNotifications(nome, email,usuario);
+
+
+      
             //persiste
             return new AdicionarUsuarioResponse(Guid.NewGuid());
 
 
         }
 
-        public AutenticarUsuarioResponse AutenticarUsuario(AutenticarUsuarioRequest  request)
+        public AutenticarUsuarioResponse AutenticarUsuario(AutenticarUsuarioRequest request)
         {
             throw new System.NotImplementedException();
         }
