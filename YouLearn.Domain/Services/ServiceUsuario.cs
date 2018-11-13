@@ -1,5 +1,8 @@
 ﻿using prmToolkit.NotificationPattern;
+<<<<<<< HEAD
 using prmToolkit.NotificationPattern.Extensions;
+=======
+>>>>>>> 491f5a4b0e68118431d4b3f7a29475c327fba264
 using System;
 using YouLearn.Domain.Arguments.Usuario;
 using YouLearn.Domain.Entities;
@@ -9,7 +12,9 @@ using YouLearn.Domain.ValueObjects;
 
 namespace YouLearn.Domain.Services
 {
+ 
     public class ServiceUsuario : Notifiable, IServiceUsuario
+ 
     {
         public AdicionarUsuarioResponse AdicionarUsuario(AdicionarUsuarioRequest request)
         {
