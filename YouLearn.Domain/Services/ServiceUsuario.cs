@@ -67,13 +67,9 @@ namespace YouLearn.Domain.Services
                 AddNotification("Usuario", MSG.DADOS_NAO_ENCONTRADOS);
             }
 
-            var response = new AutenticarUsuarioResponse()
-            {
-                Id = usuario.Id,
-                PrimeiroNome = usuario.Nome.PrimeiroNome
-            };
+         
 
-            return response;
+            return  (AutenticarUsuarioResponse)usuario;
         }
     }
 }

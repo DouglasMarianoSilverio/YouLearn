@@ -15,10 +15,7 @@ namespace YouLearn.Domain.Entities
             Email = email;
             Senha = senha;
 
-            AddNotifications(Email);
-
-            new AddNotifications<Usuario>(this)
-             .IfLengthLowerThan(x => x.Senha, 3, MSG.X0_E_OBRIGATORIA_E_DEVE_CONTER_X1_CARACTERES.ToFormat("Senha", 4));
+            AddNotifications(Email); 
 
             Senha = Senha.ConvertToMD5();
         }
