@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YouLearn.Domain\YouLearn.Domain.csproj" />
+    <ProjectReference Include="..\YouLearn.Shared\YouLearn.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
