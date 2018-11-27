@@ -4,10 +4,10 @@ namespace YouLearn.Domain.Entities
 {
     public class Canal
     {
-        public Guid Id { get; set; }
-        public string Nome { get; set; }
-        public string UrlLogo { get; set; }
-        public Usuario Usuario { get; set; }
+        public Guid Id { get; private set; }
+        public string Nome { get; private set; }
+        public string UrlLogo { get; private set; }
+        public Usuario Usuario { get; private  set; }
 
     }
 }

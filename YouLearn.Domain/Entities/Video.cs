@@ -6,14 +6,14 @@ namespace YouLearn.Domain.Entities
 {
     public class Video : EntityBase
     {
-        public Canal Canal { get; set; }
-        public Playlist Playlist { get; set; }
-        public string Titulo { get; set; }
-        public string Descricao { get; set; }
-        public string Tags { get; set; }
-        public int OrdemNaPlaylist { get; set; }
-        public string IdVideoYoutube { get; set; }
-        public Usuario UsuarioSugeriu { get; set; }
-        public EnumStatus Status { get; set; }
+        public Canal Canal { get; private set; }
+        public Playlist Playlist { get; private set; }
+        public string Titulo { get; private set; }
+        public string Descricao { get; private set; }
+        public string Tags { get; private set; }
+        public int OrdemNaPlaylist { get; private set; }
+        public string IdVideoYoutube { get; private set; }
+        public Usuario UsuarioSugeriu { get; private set; }
+        public EnumStatus Status { get; private set; }
     }
 }

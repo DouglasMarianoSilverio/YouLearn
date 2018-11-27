@@ -13,19 +13,21 @@ namespace YouLearn.Infra.Persistence.EF.Map
             //pk
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Senha).HasMaxLength(36).IsRequired();
+            
 
             //mapeando objetos de valor ( complexos)
             builder.OwnsOne<Nome>(x => x.Nome, cb =>
             {
                 cb.Property(x => x.PrimeiroNome).HasMaxLength(50).HasColumnName("PrimeiroNome").IsRequired();
-                cb.Property(x => x.UltimoNome).HasMaxLength(50).HasColumnName("UltinoNome").IsRequired();
+                cb.Property(x => x.UltimoNome).HasMaxLength(50).HasColumnName("UltimoNome").IsRequired();
             });
 
             builder.OwnsOne<Email>(x => x.Email, cb =>
             {
                 cb.Property(x => x.Endereco).HasMaxLength(200).HasColumnName("Email").IsRequired();
             });
+
+            builder.Property(x => x.Senha).HasMaxLength(36).IsRequired();
         }
     }
 }

@@ -7,7 +7,9 @@ namespace YouLearn.Domain.Entities.Base
 {
     public abstract class EntityBase : Notifiable
     {
-        public EntityBase()
+        
+
+        public  EntityBase()
         {
             Id =  Guid.NewGuid();
         }

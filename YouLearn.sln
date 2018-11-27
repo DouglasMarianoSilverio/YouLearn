@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLearn.Domain", "YouLearn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLearn.Tests", "YouLearn.Tests\YouLearn.Tests.csproj", "{BA8EE074-4B77-433F-99A4-340484D41527}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouLearn.Infra", "YouLearn.Infra\YouLearn.Infra.csproj", "{EE8D18E9-109E-49A6-9294-49B2329E6A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLearn.Infra", "YouLearn.Infra\YouLearn.Infra.csproj", "{EE8D18E9-109E-49A6-9294-49B2329E6A6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouLearn.Shared", "YouLearn.Shared\YouLearn.Shared.csproj", "{F2DD56FE-5004-439A-B6E2-302CA0C7F16E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLearn.Shared", "YouLearn.Shared\YouLearn.Shared.csproj", "{F2DD56FE-5004-439A-B6E2-302CA0C7F16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouLearn.Api", "YouLearn.Api\YouLearn.Api.csproj", "{13BC95AD-B1B6-4192-9687-5B068E55B36F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F2DD56FE-5004-439A-B6E2-302CA0C7F16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2DD56FE-5004-439A-B6E2-302CA0C7F16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2DD56FE-5004-439A-B6E2-302CA0C7F16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BC95AD-B1B6-4192-9687-5B068E55B36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BC95AD-B1B6-4192-9687-5B068E55B36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BC95AD-B1B6-4192-9687-5B068E55B36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BC95AD-B1B6-4192-9687-5B068E55B36F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
