@@ -8,7 +8,7 @@ namespace YouLearn.Domain.Entities
     {
         public Canal Canal { get; set; }
         public Playlist Playlist { get; set; }
-        public string Nome { get; set; }
+        public string Titulo { get; set; }
         public string Descricao { get; set; }
         public string Tags { get; set; }
         public int OrdemNaPlaylist { get; set; }
