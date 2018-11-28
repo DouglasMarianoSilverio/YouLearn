@@ -5,6 +5,7 @@ using YouLearn.Domain.Arguments.Usuario;
 using YouLearn.Domain.Entities;
 using YouLearn.Domain.Interfaces.Repositories;
 using YouLearn.Domain.Interfaces.Services;
+using YouLearn.Domain.Interfaces.Services.Base;
 using YouLearn.Domain.Resources;
 using YouLearn.Domain.ValueObjects;
 
@@ -15,6 +16,7 @@ namespace YouLearn.Domain.Services
 
     {
         private readonly IRepositoryUsuario _repositoryUsuario;
+        
 
         public ServiceUsuario(IRepositoryUsuario repositoryUsuario)
         {
