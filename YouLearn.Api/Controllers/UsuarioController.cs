@@ -1,22 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using YouLearn.Domain.Arguments.Usuario;
-using System.Threading.Tasks;
-using YouLearn.Domain.Services;
-using YouLearn.Domain.Interfaces.Services;
 using System;
-using YouLearn.Domain.Interfaces.Services.Base;
+using System.Threading.Tasks;
+using YouLearn.Domain.Arguments.Usuario;
+using YouLearn.Domain.Interfaces.Services;
+using YouLearn.Domain.Services;
+using YouLearn.Infra.Transactions;
 
 namespace YouLearn.Api.Controllers
 {
-    public class UsuarioController : Controller
+    public class UsuarioController : YouLearn.Api.Controllers.Base.ControllerBase
     {
 
-        private readonly IServiceUsuario serviceUsuario;
-        
+        private readonly IServiceUsuario _serviceUsuario;
 
-        public UsuarioController(ServiceUsuario serviceUsuario)
+        public UsuarioController(IUnitOfWork unitOfWork, IServiceUsuario serviceUsuario) : base(unitOfWork)
         {
-            this.serviceUsuario = serviceUsuario;
+            _serviceUsuario = serviceUsuario;
         }
 
         [HttpPost]
@@ -24,8 +23,8 @@ namespace YouLearn.Api.Controllers
         public async Task<IActionResult> Adicionar([FromBody] AdicionarUsuarioRequest request)
         {
             try {
-                //var response = serviceUsuario.AdicionarUsuario(request);
-                //return await ResposeAsync(reponse, _serviceUsuario);
+                var response = _serviceUsuario.AdicionarUsuario(request);
+                return await ResponseAsync(response, _serviceUsuario);
             }
             catch(Exception ex)
             {
