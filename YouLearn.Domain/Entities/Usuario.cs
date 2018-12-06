@@ -10,8 +10,20 @@ namespace YouLearn.Domain.Entities
 {
     public class Usuario : EntityBase
     {
-        public Usuario()
+      
+
+    
+
+        public Usuario(Nome nome, Email email, string senha)
         {
+            Nome = nome;
+            Email = email;
+            Senha = senha;
+            new AddNotifications<Usuario>(this)
+               .IfNullOrInvalidLength(x => x.Senha, 3,32, MSG.X0_E_OBRIGATORIA_E_DEVE_CONTER_X1_CARACTERES.ToFormat("Senha", 4));
+            Senha = Senha.ConvertToMD5();
+            AddNotifications(Nome, Email); 
+     
         }
 
         public Usuario(Email email, string senha)
@@ -19,23 +31,13 @@ namespace YouLearn.Domain.Entities
             Email = email;
             Senha = senha;
 
-            AddNotifications(Email); 
+            AddNotifications(Email);
 
             Senha = Senha.ConvertToMD5();
         }
 
-        public Usuario(Nome nome, Email email, string senha)
+        public Usuario()
         {
-            Nome = nome;
-            Email = email;
-            Senha = senha;
-
-            AddNotifications(Nome, Email);
-
-            new AddNotifications<Usuario>(this)
-                .IfLengthLowerThan(x => x.Senha, 3, MSG.X0_E_OBRIGATORIA_E_DEVE_CONTER_X1_CARACTERES.ToFormat("Senha", 4));
-
-            Senha = Senha.ConvertToMD5();
         }
 
         public Nome Nome { get; private set; }
