@@ -31,6 +31,7 @@ namespace YouLearn.Api.Controllers.Base
                 catch(Exception ex)
                 {
                     return  BadRequest($"Houve um problema interno com o servidor. Entre em contato");
+                    
                 }
             }
             else

@@ -58,11 +58,7 @@ namespace YouLearn.Api
             app.UseSwaggerUI( c=> {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "YouLearn - V1");
             });
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+            
         }
     }
 }
