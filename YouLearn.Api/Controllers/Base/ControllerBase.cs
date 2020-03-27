@@ -24,14 +24,13 @@ namespace YouLearn.Api.Controllers.Base
             {
                 try
                 {
-                    _unitOfWork.Commit();
+                     _unitOfWork.Commit();
                     return Ok(result);
                     //return Request.CreateResponse(HttpStatusCode.Ok, result);
                 }
                 catch(Exception ex)
                 {
-                    return  BadRequest($"Houve um problema interno com o servidor. Entre em contato");
-                    
+                    return  BadRequest($"Houve um problema interno com o servidor. Entre em contato");                                       
                 }
             }
             else

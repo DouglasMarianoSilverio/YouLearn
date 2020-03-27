@@ -10,7 +10,7 @@ namespace YouLearn.Infra.Persistence.EF
     public class YouLearnContext : DbContext
     {
         public DbSet<Canal> Canais { get; set; }
-        public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<PlayList> PlayLists { get; set; }
         public DbSet<Video> Videos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
@@ -30,7 +30,7 @@ namespace YouLearn.Infra.Persistence.EF
 
             //aplicar configuracoes
             modelBuilder.ApplyConfiguration(new MapCanal());
-            modelBuilder.ApplyConfiguration(new MapPlaylist());
+            modelBuilder.ApplyConfiguration(new MapPlayList());
             modelBuilder.ApplyConfiguration(new MapVideo());
             modelBuilder.ApplyConfiguration(new MapUsuario());
             //modelBuilder.ApplyConfiguration(new MapFavorito());

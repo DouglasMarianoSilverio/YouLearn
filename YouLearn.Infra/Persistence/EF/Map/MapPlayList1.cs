@@ -7,9 +7,9 @@ using YouLearn.Domain.Entities;
 
 namespace YouLearn.Infra.Persistence.EF.Map
 {
-    public class MapPlaylist : IEntityTypeConfiguration<Playlist>
+    public class MapPlayList : IEntityTypeConfiguration<PlayList>
     {
-        public void Configure(EntityTypeBuilder<Playlist> builder)
+        public void Configure(EntityTypeBuilder<PlayList> builder)
         {
             builder.ToTable("PlayList");
             //Foreign Key

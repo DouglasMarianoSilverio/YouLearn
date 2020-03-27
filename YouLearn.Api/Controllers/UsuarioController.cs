@@ -3,12 +3,11 @@ using System;
 using System.Threading.Tasks;
 using YouLearn.Domain.Arguments.Usuario;
 using YouLearn.Domain.Interfaces.Services;
-using YouLearn.Domain.Services;
 using YouLearn.Infra.Transactions;
 
 namespace YouLearn.Api.Controllers
 {
-    public class UsuarioController : YouLearn.Api.Controllers.Base.ControllerBase
+    public class UsuarioController : Base.ControllerBase
     {
 
         private readonly IServiceUsuario _serviceUsuario;
