@@ -3,7 +3,6 @@ using prmToolkit.NotificationPattern.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using YouLearn.Domain.Arguments.Canal;
 using YouLearn.Domain.Arguments.PlayList;
 using YouLearn.Domain.Entities;
 using YouLearn.Domain.Interfaces.Repositories;
@@ -19,6 +18,14 @@ namespace YouLearn.Domain.Services
 
         private readonly IRepositoryUsuario _repositoryUsuario;
         private readonly IRepositoryPlayList  _repositoryPlayList;
+        private readonly IRepositoryVideo _repositoryVideo;
+
+        public ServicePlayList(IRepositoryUsuario repositoryUsuario, IRepositoryPlayList repositoryPlayList, IRepositoryVideo repositoryVideo)
+        {
+            _repositoryUsuario = repositoryUsuario;
+            _repositoryPlayList = repositoryPlayList;
+            _repositoryVideo = repositoryVideo;
+        }
 
         public PlayListResponse AdicionarPlayList(AdicionarPlayListRequest request, Guid idUsuario)
         {
@@ -35,11 +42,11 @@ namespace YouLearn.Domain.Services
 
         public Arguments.Base.Response ExcluirPlayList(Guid id)
         {
-            bool existe = false; // _repositoryVideo.ExistePlayListAssociada(id);
+            bool existe = _repositoryVideo.ExistePlayListAssociada(id);
             if (existe)
             {
                 AddNotification("PlayList", MSG.NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UMA_X1.ToFormat("PlayList", "Video"));
-                 
+                return null; 
             }
             PlayList playlist = _repositoryPlayList.Obter(id);
 

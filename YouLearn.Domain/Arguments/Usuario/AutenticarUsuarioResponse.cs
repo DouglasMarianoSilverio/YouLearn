@@ -9,6 +9,9 @@ namespace YouLearn.Domain.Arguments.Usuario
 
         public static explicit operator AutenticarUsuarioResponse(Entities.Usuario entidade)
         {
+            if (entidade == null)
+                return null;
+
             return new AutenticarUsuarioResponse()
             {
                 Id = entidade.Id,

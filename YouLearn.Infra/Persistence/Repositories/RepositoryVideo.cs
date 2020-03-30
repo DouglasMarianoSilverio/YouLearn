@@ -13,6 +13,11 @@ namespace YouLearn.Infra.Persistence.Repositories
 
         private readonly YouLearnContext _context;
 
+        public RepositoryVideo(YouLearnContext context)
+        {
+            _context = context;
+        }
+
         public void Adicionar(Video video)
         {
             _context.Videos.Add(video);

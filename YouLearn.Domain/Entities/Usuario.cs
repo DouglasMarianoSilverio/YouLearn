@@ -10,8 +10,10 @@ namespace YouLearn.Domain.Entities
 {
     public class Usuario : EntityBase
     {
-      
 
+        protected Usuario()
+        {
+        }
     
 
         public Usuario(Nome nome, Email email, string senha)
@@ -36,9 +38,7 @@ namespace YouLearn.Domain.Entities
             Senha = Senha.ConvertToMD5();
         }
 
-        public Usuario()
-        {
-        }
+        
 
         public Nome Nome { get; private set; }
         public Email Email { get; private set; }

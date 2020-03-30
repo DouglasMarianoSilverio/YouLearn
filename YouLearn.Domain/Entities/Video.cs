@@ -9,6 +9,10 @@ namespace YouLearn.Domain.Entities
 {
     public class Video : EntityBase
     {
+        protected Video()
+        {
+
+        }
         public Video(Canal canal, PlayList playlist, string titulo, string descricao, string tags, int? ordemNaPlaylist, string idVideoYoutube, Usuario usuarioSugeriu)
         {
             Canal = canal;

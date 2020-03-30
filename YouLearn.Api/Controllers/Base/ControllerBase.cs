@@ -28,9 +28,11 @@ namespace YouLearn.Api.Controllers.Base
                     return Ok(result);
                     //return Request.CreateResponse(HttpStatusCode.Ok, result);
                 }
-                catch(Exception ex)
-                {
+                catch(Exception)
+                {                    
+                    
                     return  BadRequest($"Houve um problema interno com o servidor. Entre em contato");                                       
+
                 }
             }
             else
